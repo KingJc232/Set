@@ -5,7 +5,13 @@ Goal: To Test the custom Set Data Structure
 Note: Trying to Use OOP Design 
 """
 
+
 from linkedSet import LinkedSet
+
+
+"""
+LEFT OFF FINISH REMOVE METHOD 
+"""
 
 
 def main():

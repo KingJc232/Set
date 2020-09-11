@@ -27,3 +27,7 @@ class Set:
 	#Abstract: Clears the Entire Set 
 	def clear(self):
 		raise NotImplementedError("Please Implement Clear Method")
+
+	#Abstract: Determines if Set Empty 
+	def isEmpty(self):
+		raise NotImplementedError("Please Implement isEmpty Method")

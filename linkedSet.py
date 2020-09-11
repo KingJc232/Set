@@ -62,15 +62,44 @@ class LinkedSet(Set):
 
 		return found
 
+
 	#Removes a specified Element From the Set (Ensure Element Exists / not at zero )
 	def remove(self, element):
-		pass
+
+		#DONT FORGET TO DECREMENT SIZE 
+
+		#Empty LinkedSet 
+		if self.isEmpty()
+			return 
+
+		#Temp Iterator used to iterate through the list 
+		itr = self.head
+		prevItr = None #Initially Nothing
+
+		#While the Iterator is not None
+		while itr: 		
+
+			#Element to Remove 
+			if itr.data == element:
+
+
+			prevItr = itr #Saving the Previous Node 
+			itr = itr.next #Go to the next Node 
+
+		#NOT FOUND 
+		return False #FAILED REMOVED NOT FOUND 
+
 	#Randomly Removes a Element From the Set (Ensure size not at zero )
 	def pop(self):
 		pass
 	#Clears the Entire Set 
 	def clear(self):
 		pass
+
+	#Checks if the Set is Empty or Not 
+	def isEmpty(self):
+		return self.size == 0 
+
 
 	#Ensures Object can be used with len()
 	def __len__(self):
