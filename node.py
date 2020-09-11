@@ -13,6 +13,15 @@ class Node:
 
 		self._nextNode = nextNode
 
+	#Getter
+	@property
+	def data(self):
+		return self._data
+	
+	@data.setter
+	def data(self, newData):
+		self._data = newData
+
 	@property
 	def nextNode(self):
 		return self._nextNode

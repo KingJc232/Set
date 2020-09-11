@@ -13,8 +13,13 @@ def main():
 	linkedSet = LinkedSet()
 
 	linkedSet.add(1)
+	linkedSet.add(2)
+	linkedSet.add(3)
+	linkedSet.add(4)
 
 	print(linkedSet)
+
+	print(len(linkedSet))
 
 
 if __name__ == "__main__":
