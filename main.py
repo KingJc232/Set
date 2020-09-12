@@ -9,10 +9,6 @@ Note: Trying to Use OOP Design
 from linkedSet import LinkedSet
 
 
-"""
-LEFT OFF FINISH REMOVE METHOD 
-"""
-
 
 def main():
 
@@ -23,9 +19,14 @@ def main():
 	linkedSet.add(3)
 	linkedSet.add(4)
 
-	print(linkedSet)
 
-	print(len(linkedSet))
+
+	print("Before Removal: %s" % linkedSet)
+	print("Size: %d" % len(linkedSet))
+
+
+	print("After Removal: %s" % linkedSet)
+	print("Size: %d" % len(linkedSet))
 
 
 if __name__ == "__main__":

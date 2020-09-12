@@ -20,7 +20,7 @@ class LinkedSet(Set):
 	def size(self):
 		return self._size
 
-	#Adds a element to the set (ENSURE ELEMENT IS Unique) 
+	#Adds an element to the set (ENSURE ELEMENT IS Unique) 
 	def add(self, element):
 
 		#Ensuring the Element is not in the set 
@@ -63,14 +63,11 @@ class LinkedSet(Set):
 		return found
 
 
-	#Removes a specified Element From the Set (Ensure Element Exists / not at zero )
+	#Removes a specified Element From the Set 
+	#If Element Doesnt Exists will return False (Failed to Remove)
 	def remove(self, element):
 
-		#DONT FORGET TO DECREMENT SIZE 
-
-		#Empty LinkedSet 
-		if self.isEmpty()
-			return 
+		removedSuccessful = False #Initially False
 
 		#Temp Iterator used to iterate through the list 
 		itr = self.head
@@ -78,23 +75,43 @@ class LinkedSet(Set):
 
 		#While the Iterator is not None
 		while itr: 		
-
 			#Element to Remove 
 			if itr.data == element:
-
-
+				#Removing the First Element 
+				if prevItr is None: 
+					self.head = self.head.nextNode #Removing the first Node
+				#Removing a Mid Element or the Last Element
+				else:
+					prevItr.nextNode = itr.nextNode
+					itr.nextNode = None #Dereferencing
+				removedSuccessful = True
 			prevItr = itr #Saving the Previous Node 
-			itr = itr.next #Go to the next Node 
+			itr = itr.nextNode #Go to the next Node 
 
-		#NOT FOUND 
-		return False #FAILED REMOVED NOT FOUND 
+		#DONT FORGET TO DECREMENT SIZE 
+		if removedSuccessful:
+			self._size -= 1 
+		return removedSuccessful 
 
-	#Randomly Removes a Element From the Set (Ensure size not at zero )
+	#Randomly Removes an Element From the Set (Ensure size not at zero )
 	def pop(self):
-		pass
+
+		#Ensures LinkedSet Not Empty 
+		if self.isEmpty():
+			raise Exception("Error: You Cannot Pop an Empty LinkedSet")
+
+		#Easiest element to remove is the head so thats the one we are going to do since its a set 
+		self.head = self.head.nextNode
+		#Decrementing the size
+		self._size -= 1
+
+
 	#Clears the Entire Set 
 	def clear(self):
-		pass
+
+		#While Not Empty Pop it 
+		while not self.isEmpty():
+			self.pop()
 
 	#Checks if the Set is Empty or Not 
 	def isEmpty(self):
