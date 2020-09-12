@@ -9,3 +9,4 @@
 - remove(element)
 - pop()
 - clear()
+- isEmpty()
